@@ -91,24 +91,34 @@ El datapath se controla con instrucciones tipo R e I las cuales son:
    - Lw : lee elemento guardado en la memoria
    - Sw : escribe un elemento en la memoria
 
+![Arquitectura ALU](/Img/Imagen1.png)
+
 ## MARCO TEÓRICO<a name="id5"></a>
 
 #### Registro
 
 Un registro es un grupo de flip-flop, cada uno de los cuales comparten un reloj común y es capaz de guardar más de un bit de información. Un registro de n bits consiste en un grupo de n flip-flop capaces de guardar bits de información binaria, un registro puede tener compuertas combinacionales que realizan ciertas tareas de procesamiento de datos. Los flip-flop retienen la información binaria, y las compuertas determinan como se transfiere al registro.
 
+![Arquitectura ALU](/Img/Imagen2.png)
+
 En la imagen a) se muestra sistema de memoria que este caso sería un registro y nos daremos cuenta de que hay una retroalimentación, por lo tanto los valores de las salidas, en un momento dado, no dependen exclusivamente de los valores de las entradas en dicho momento, sino también dependen del estado anterior o estado interno. 
 
 #### Registro de entrada y salida en paralelo (PIPO)
+
+![Arquitectura ALU](/Img/Imagen3.png)
 
 La entrada de datos es cada una de las entradas D del biestable; la entrada de habilitación se une a una entrada de habilitación global, de manera que cuando se activa, permite que se lean los datos. Hay otra entrada (control de salida) que al activarse permite que se lean las salidas.
 
 #### Circuito integrado 555
 Se utiliza en la generación de temporizadores, pulsos y oscilaciones. El 555 puede ser utilizado para proporcionar retardos de tiempo, como un oscilador, y como un circuito integrado flip flop.
 
+![Arquitectura ALU](/Img/Imagen4.png)
+
 #### Potenciómetro
 
 El potenciómetro es una resistencia variable, limitan el paso de la corriente eléctrica (Intensidad) provocando una caída de tensión en ellos al igual que en una resistencia, pero en este caso el valor de la corriente y  la tensión en el potenciómetro las podemos variar solo con cambiar el valor de su resistencia. El potenciómetro más sencillo es una resistencia variable mecánicamente. Los primeros potenciómetros y más sencillos son los reóstatos.
+
+![Arquitectura ALU](/Img/Imagen5.png)
  
 Tenemos 3 terminales A, B y C. Si conectáramos los terminales A y B al circuito sería una resistencia Fija del valor igual al máximo de la resistencia que podría tener el reóstato. Ahora bien, si conectamos los terminales A y C el valor de la resistencia dependería de la posición donde estuviera el terminal C, que se puede mover hacia un lado o el otro. Hemos conseguido un Potenciómetro, ya que es una resistencia variable. Este potenciómetro es variable mecánicamente, ya que para que varíe la resistencia lo hacemos manualmente, moviendo el terminal C. Este tipo de potenciómetros se llaman reóstatos, suelen tener resistencia grande y se suelen utilizar en circuitos eléctricos por los que circula mucha intensidad.
 
@@ -116,17 +126,25 @@ Tenemos 3 terminales A, B y C. Si conectáramos los terminales A y B al circuito
 
 Es un componente que se utiliza para la representación de números en muchos dispositivos electrónicos.
 Cada elemento del display tiene asignado una letra que identifica su posición en el arreglo del display.
+
+![Arquitectura ALU](/Img/Imagen6.gif)
  
 #### Arreglo de leds en un display de 7 segmentos cátodo común. 
 
 El display cátodo común tiene todos los ánodos de los diodos LED unidos y conectados a tierra. Para activar un segmento de estos hay que poner el ánodo del segmento a encender a Vcc (tensión de la fuente) a través de una resistencia para limitar el paso de la corriente.
+
+![Arquitectura ALU](/Img/Imagen7.gif)
  
 #### Capacitor
 
 Un capacitor es un componente eléctrico pasivo que guarda energía y tiene la propiedad de capacitancia. En estado neutro, las dos placas de un capacitor tienen el mismo número de electrones libres. Cuando el capacitor se conecta a una fuente de voltaje mediante una resistencia, se liberan electrones de la placa A, los cuales se depositan en la placa B en un número igual deliberado. A medida que la placa A pierde electrones y la placa B los gana, la placa A se vuelve positiva con respecto a la placa B. Durante este proceso de carga, los electrones fluyen solo a través de los contactos. Por el dieléctrico del capacitor no fluyen electrones porque es un aislante. El movimiento de electrones cesa cuando el voltaje presente en el capacitor es igual al voltaje de la fuente, retiene la carga almacenada durante un largo periodo y aún tiene voltaje de un lado a otro de él. Un capacitor cargado es capaz de actuar como batería temporal.
 
+![Arquitectura ALU](/Img/Imagen8.png)
+
 #### FPGA
 Una FPGA (del inglés Field Programmable Gate Array) es un dispositivo programable que contiene bloques de lógica cuya interconexión y funcionalidad puede ser configurada 'in situ' mediante un lenguaje de descripción especializado. La lógica programable puede reproducir desde funciones tan sencillas como las llevadas a cabo por una puerta lógica o un sistema combinacional hasta complejos sistemas en un chip.
+
+![Arquitectura ALU](/Img/Imagen9.png)
 
 Las FPGAs se utilizan en aplicaciones similares a los ASICs sin embargo son más lentas, tienen un mayor consumo de potencia y no pueden abarcar sistemas tan complejos como ellos. A pesar de esto, las FPGAs tienen las ventajas de ser reprogramables (lo que añade una enorme flexibilidad al flujo de diseño), sus costes de desarrollo y adquisición son mucho menores para pequeñas cantidades de dispositivos y el tiempo de desarrollo es también menor.
 
@@ -551,10 +569,13 @@ end BCD_2;
 
 Para realizar el reloj se usó un circuito integrado 555 y un potenciómetro de 50 kilos para regular la frecuencia, regulados con un capacitor de 47 microfaradios y una resistencia de 1 kilo como se muestra en el diagrama. 
    
+![Arquitectura ALU](/Img/Imagen10.jpg)
 
 #### Registro 
 
 Para hacer el registro de cuatro bits se realizó un registro PIPO utilizando tres registros 74HC194.
+
+![Arquitectura ALU](/Img/Imagen11.png)
 
 ## ANÁLISIS Y RESULTADOS<a name="id7"></a>
 
@@ -627,6 +648,8 @@ Las combinaciones que se utilizaron para realizar las operaciones deseadas se mu
 ###### _TABLA 1. Combinaciones para operaciones_
 
 Se puede ver que cuando el bit más significativo de la combinación es cero, la operación que realiza la ALU es aritmética, y si el valor es 1, entonces se lleva a cabo una operación lógica.
+
+![Arquitectura ALU](/Img/Imagen12.png)
 
 ## CONCLUSIONES<a name="id8"></a>
 
